@@ -1,19 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import logoImg from '@/assets/logo.png';
+import classes from './mainHeader.module.css';
 
 const MainHeader = () => {
   return (
-    <header>
-      <Link href={'/'}>
-        <Image
-          src={logoImg.src}
-          alt={'A plate with food on it'}
-          width={200}
-          height={200}
-        />
+    <header className={classes.header}>
+      <Link className={classes.logo} href={'/'}>
+        <Image src={logoImg} alt={'A plate with food on it'} priority />
+        {'NextLevel Food'}
       </Link>
-      <nav>
+      <nav className={classes.nav}>
         <ul>
           <li>
             <Link href={'/meals'}>Browse Meals</Link>
