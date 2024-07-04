@@ -39,3 +39,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
   You should use the priority property on any image detected as the Largest Contentful Paint (LCP) element. It may be appropriate to have multiple priority images, as different images may be the LCP element for different viewport sizes.
 
   Should only be used when the image is visible above the fold. Defaults to false
+
+- By default, all React components (in NextJS apps) are RSCs, there is included pages, layouts and general components
+
+- Client components are those that are prerendered on the server but then also potentially on the client.
