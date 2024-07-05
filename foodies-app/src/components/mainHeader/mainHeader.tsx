@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import logoImg from '@/assets/logo.png';
 import classes from './mainHeader.module.css';
+import NavLink from './navLink';
 
 const MainHeader = () => {
   return (
@@ -11,14 +12,8 @@ const MainHeader = () => {
         {'NextLevel Food'}
       </Link>
       <nav className={classes.nav}>
-        <ul>
-          <li>
-            <Link href={'/meals'}>Browse Meals</Link>
-          </li>
-          <li>
-            <Link href={'/community'}>Foodies Community</Link>
-          </li>
-        </ul>
+        <NavLink href="/meals"> Browse Meals</NavLink>
+        <NavLink href="/community"> Foodies Community</NavLink>
       </nav>
     </header>
   );
