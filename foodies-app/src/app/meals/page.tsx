@@ -3,13 +3,11 @@ import { cookies } from 'next/headers';
 import classes from './page.module.css';
 import Link from 'next/link';
 import MealsGrid from '@/components/meals/mealsGrid';
+import getMeals from '@/services/getMeals';
+import { MealItemProps } from '@/components/meals/mealItem';
 
 const MealsPage = async () => {
-  const cookieStore = cookies();
-  const supabase = createClient(cookieStore);
-
-  let { data: meals, error } = await supabase.from('meals').select();
-
+  const { meals } = await getMeals();
   return (
     <>
       <header className={classes.header}>
@@ -25,7 +23,7 @@ const MealsPage = async () => {
         </p>
       </header>
       <main className={classes.main}>
-        <MealsGrid meals={[]} />
+        <MealsGrid meals={meals as MealItemProps[]} />
       </main>
     </>
   );
