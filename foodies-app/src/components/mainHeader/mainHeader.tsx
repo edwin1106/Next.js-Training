@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import logoImg from '@/assets/logo.png';
+import logoImg from '@/public/assets/logo.png';
 import classes from './mainHeader.module.css';
 import NavLink from './navLink';
 
