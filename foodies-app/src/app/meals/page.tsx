@@ -1,13 +1,17 @@
-import { createClient } from '@/utils/supabase/server';
-import { cookies } from 'next/headers';
+import { Suspense } from 'react';
 import classes from './page.module.css';
 import Link from 'next/link';
 import MealsGrid from '@/components/meals/mealsGrid';
 import getMeals from '@/services/getMeals';
 import { MealItemProps } from '@/components/meals/mealItem';
 
-const MealsPage = async () => {
+const AsyncGetMeals = async () => {
   const { meals } = await getMeals();
+
+  return <MealsGrid meals={meals as MealItemProps[]} />;
+};
+
+const MealsPage = async () => {
   return (
     <>
       <header className={classes.header}>
@@ -23,7 +27,11 @@ const MealsPage = async () => {
         </p>
       </header>
       <main className={classes.main}>
-        <MealsGrid meals={meals as MealItemProps[]} />
+        <Suspense
+          fallback={<p className={classes.loading}>Fetching Meals...</p>}
+        >
+          <AsyncGetMeals />
+        </Suspense>
       </main>
     </>
   );
