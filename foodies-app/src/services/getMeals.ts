@@ -7,6 +7,7 @@ const getMeals = async () => {
   const supabase = createClient(cookieStore);
 
   let { data: meals, error } = await supabase.from('meals').select();
+
   await new Promise((resolve) => setTimeout(resolve, 2000));
   return { meals, error };
 };
