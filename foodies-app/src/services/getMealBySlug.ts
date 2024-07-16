@@ -15,6 +15,6 @@ const getMealBySlug = async (props: getMealsByIdProps) => {
     .select()
     .eq('slug', `${slug}`);
 
-  return { data, error };
+  return { data: data ? data[0] : [], error };
 };
 export default getMealBySlug;
