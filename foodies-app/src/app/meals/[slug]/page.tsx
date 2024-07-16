@@ -6,22 +6,30 @@ interface SlugMealPageProps {
   params: { slug: string };
 }
 const SlugMealPage = async ({ params }: SlugMealPageProps) => {
-  const meal = await getMealBySlug({ slug: 'spicy-curry' });
+  const { data: meal } = await getMealBySlug({ slug: params.slug });
+  const instructions = meal.instructions.replace(/\n/g, '<br />');
   return (
     <>
       <header className={classes.header}>
         <div className={classes.image}>
-          <Image fill />
+          <Image src={meal.image} alt={meal.title} fill />
         </div>
         <div className={classes.headerText}>
-          <h1></h1>
+          <h1>{meal.title}</h1>
           <p className={classes.creator}>
-            by <a href={`mailto:${'email'}`}></a>
+            <a href={`mailto:${meal.creator_email}`}>{meal.creator}</a>
           </p>
-          <p className={classes.summary}></p>
+          <p className={classes.summary}>{meal.summary}</p>
         </div>
       </header>
-      <main></main>
+      <main>
+        <p
+          className={classes.instructions}
+          dangerouslySetInnerHTML={{
+            __html: instructions
+          }}
+        ></p>
+      </main>
     </>
   );
 };
