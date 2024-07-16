@@ -7,8 +7,8 @@ const getMeals = async () => {
   const supabase = createClient(cookieStore);
 
   let { data: meals, error } = await supabase.from('meals').select();
-
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  //With below line you could simulate a response with 2 seconds delai
+  //await new Promise((resolve) => setTimeout(resolve, 2000));
   return { meals, error };
 };
 
