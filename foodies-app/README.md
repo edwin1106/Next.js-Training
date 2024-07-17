@@ -38,3 +38,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Highlights
 
 - Database created with supabase using github authentication and the password is `FoodiesApp123*`
+- You can connect an html tang using `htmlFor = {id}` and using the id of another html tag
