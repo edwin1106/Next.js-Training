@@ -59,6 +59,7 @@ const ImagePicker = ({ label, name }: ImagePickerProps) => {
             name={name}
             ref={imageInput}
             onChange={handleImageChange}
+            required
           />
         </div>
         <button
