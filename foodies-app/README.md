@@ -39,3 +39,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - Database created with supabase using github authentication and the password is `FoodiesApp123*`
 - You can connect an html tang using `htmlFor = {id}` and using the id of another html tag
+- A server action is a function that's guaranteed to execute on the server, nad only there and must have `async` keyword in front of it
+- Can't use a server action inside a client component
+- Usually the servers actions will be separate from componentes with jsx
+- You can import a server action inside a `use client` component
