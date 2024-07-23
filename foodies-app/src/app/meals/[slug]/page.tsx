@@ -12,6 +12,7 @@ const SlugMealPage = async ({ params }: SlugMealPageProps) => {
   if (!meal) notFound();
 
   const instructions = meal.instructions.replace(/\n/g, '<br />');
+
   return (
     <>
       <header className={classes.header}>

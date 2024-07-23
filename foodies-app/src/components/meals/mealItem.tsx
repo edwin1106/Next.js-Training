@@ -3,12 +3,14 @@ import Image from 'next/image';
 import classes from './mealItem.module.css';
 
 export interface MealItemProps {
-  id: number;
+  id?: number;
   title: string;
-  slug: string;
+  slug?: string;
   image: string;
   summary: string;
   creator: string;
+  instructions: string;
+  creatorEmail: string;
 }
 
 const MealItem = ({ title, slug, image, summary, creator }: MealItemProps) => {
