@@ -1,10 +1,6 @@
 import { MealItemProps } from '@/components/meals/mealItem';
 import { createClient } from '@/utils/supabase/server';
-
 import { cookies } from 'next/headers';
-import { redirect } from 'next/navigation';
-import fs from 'node:fs';
-import { arrayBuffer } from 'stream/consumers';
 
 const SaveMeal = async (meal: MealItemProps) => {
   const cookieStore = cookies();
@@ -38,6 +34,5 @@ const SaveMeal = async (meal: MealItemProps) => {
       }
     ])
     .select();
-  redirect('/meals');
 };
 export default SaveMeal;

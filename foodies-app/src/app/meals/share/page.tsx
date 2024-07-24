@@ -1,7 +1,6 @@
 import MealsFormSubmit from '@/components/meals/mealsFormSubmit';
 import classes from './page.module.css';
 import { shareMeal } from '@/utils/actions';
-import { useFormStatus } from 'react-dom';
 
 const SharePage = () => {
   return (
