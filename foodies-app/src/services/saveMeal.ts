@@ -7,12 +7,11 @@ import { arrayBuffer } from 'stream/consumers';
 const SaveMeal = async (meal: MealItemProps) => {
   const cookieStore = cookies();
   const supabase = createClient(cookieStore);
-  console.log(Object(meal.image), 'meal');
 
-  const extension = meal.image.split('.').pop();
-  const fileName = `${meal.slug}.${extension}`;
+  //const extension = meal.image.split('.').pop();
+  //const fileName = `${meal.slug}.${extension}`;
 
-  const stream = fs.createWriteStream(`public/assets/${fileName}`);
+  //const stream = fs.createWriteStream(`public/assets/${fileName}`);
 
   //const bufferedImage = await meal.image.arrayBuffer();
 
@@ -22,7 +21,7 @@ const SaveMeal = async (meal: MealItemProps) => {
     }
   });*/
 
-  meal.image = `/assets/${fileName}`;
+  //meal.image = `/assets/${fileName}`;
 
   const { data, error } = await supabase
     .from('meals')

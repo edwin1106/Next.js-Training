@@ -1,5 +1,6 @@
 'use server';
 
+import { MealItemProps } from '@/components/meals/mealItem';
 import SaveMeal from '@/services/saveMeal';
 
 const shareMeal = async (formData: FormData) => {
@@ -10,7 +11,7 @@ const shareMeal = async (formData: FormData) => {
     image: formData.get('image'),
     creator: formData.get('creator'),
     creatorEmail: formData.get('email')
-  };
+  } as MealItemProps;
 
   await SaveMeal(meal);
 };

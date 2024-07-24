@@ -40,7 +40,7 @@ const SharePage = () => {
               required
             ></textarea>
           </p>
-          <ImagePicker label="Your image" name="image" />
+          {/*<ImagePicker label="Your image" name="image" />*/}
           <p className={classes.actions}>
             <button type="submit">Share Meal</button>
           </p>
