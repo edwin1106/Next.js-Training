@@ -8,14 +8,14 @@ const isInvalidText = (text: string) => {
   return !text || text.trim() === '';
 };
 
-const shareMeal = async (formData: FormData) => {
+const shareMeal = async (formData: FormData | null) => {
   const meal = {
-    title: formData.get('title'),
-    summary: formData.get('summary'),
-    instructions: formData.get('instructions'),
-    image: formData.get('image'),
-    creator: formData.get('creator'),
-    creatorEmail: formData.get('email')
+    title: formData?.get('title'),
+    summary: formData?.get('summary'),
+    instructions: formData?.get('instructions'),
+    image: formData?.get('image'),
+    creator: formData?.get('creator'),
+    creatorEmail: formData?.get('email')
   } as MealItemProps;
 
   if (
@@ -26,7 +26,9 @@ const shareMeal = async (formData: FormData) => {
     isInvalidText(meal.creatorEmail) ||
     !meal.creatorEmail.includes('@')
   ) {
-    throw new Error('Invalid input');
+    return {
+      message: 'Invalid Input'
+    };
   }
 
   await SaveMeal(meal);
