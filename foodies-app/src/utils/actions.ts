@@ -2,6 +2,7 @@
 
 import { MealItemProps } from '@/components/meals/mealItem';
 import SaveMeal from '@/services/saveMeal';
+import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 
 const isInvalidText = (text: string) => {
@@ -32,6 +33,7 @@ const shareMeal = async (formData: FormData | null) => {
   }
 
   await SaveMeal(meal);
+  revalidatePath('/meals');
   redirect('/meals');
 };
 
