@@ -43,3 +43,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - Can't use a server action inside a client component
 - Usually the servers actions will be separate from componentes with jsx
 - You can import a server action inside a `use client` component
+- `revalidatePath()` is a next function allows you to purge cached data on demand for a specific path.
+- Store files in local fileSystem is not a great idea, because those files will not available in the running Nextjs application
+- We can generate dynamic metada creating a function in the page called `generateMetadata` and it receives the same params as the page
