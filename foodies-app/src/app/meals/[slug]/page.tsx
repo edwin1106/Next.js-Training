@@ -2,10 +2,22 @@ import Image from 'next/image';
 import classes from './page.module.css';
 import getMealBySlug from '@/services/getMealBySlug';
 import { notFound } from 'next/navigation';
+import getMeals from '@/services/getMeals';
 
 interface SlugMealPageProps {
   params: { slug: string };
 }
+export const generateMetadata = async ({ params }: SlugMealPageProps) => {
+  const { data: meal } = await getMealBySlug({ slug: params.slug });
+
+  if (!meal) notFound();
+
+  return {
+    title: meal.title,
+    description: meal.summary
+  };
+};
+
 const SlugMealPage = async ({ params }: SlugMealPageProps) => {
   const { data: meal } = await getMealBySlug({ slug: params.slug });
 
