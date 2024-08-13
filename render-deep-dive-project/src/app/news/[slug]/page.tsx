@@ -16,7 +16,7 @@ const NewsDetailPage = ({ params }: NewsDetailProps) => {
           alt={newsItem.title}
           src={`/images/news/${newsItem?.image}`}
           width={100}
-          height={110}
+          height={100}
         ></Image>
         <h1>{newsItem.title}</h1>
         <time dateTime={newsItem.date}>{newsItem.date}</time>

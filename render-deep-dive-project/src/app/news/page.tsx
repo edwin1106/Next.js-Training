@@ -13,8 +13,8 @@ const NewsPage = () => {
               <Image
                 alt={newsItem.title}
                 src={`/images/news/${newsItem.image}`}
-                width={100}
-                height={100}
+                width={300}
+                height={300}
               ></Image>
               <span>{newsItem.title}</span>
             </Link>
