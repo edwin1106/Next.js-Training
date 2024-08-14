@@ -1,5 +1,3 @@
-import { New } from '@/components/newsList';
-
 export const DUMMY_NEWS = [
   {
     id: 'n1',
@@ -46,4 +44,4 @@ export const DUMMY_NEWS = [
     content:
       'Landscape photography is a great way to capture the beauty of nature. It is also a great way to get outside and enjoy the great outdoors. So what are you waiting for? Get out there and start taking some pictures!'
   }
-] as New[];
+];

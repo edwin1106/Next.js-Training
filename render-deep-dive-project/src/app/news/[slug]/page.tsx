@@ -1,5 +1,5 @@
+import { DUMMY_NEWS } from '@/lib/dummy-news';
 import Image from 'next/image';
-import { DUMMY_NEWS } from '../../../../dummy-news';
 import { notFound } from 'next/navigation';
 
 interface NewsDetailProps {
