@@ -34,3 +34,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Highlights
+
+- When using parallel routes we are working with a layout that tries to render the content of two different routes on the same page, so if one of the pages support a nested route called [year] the other page must support it too, but for simplicity we can use a `default.tsx` page and it will define the default fallback content thtat should be displayed
