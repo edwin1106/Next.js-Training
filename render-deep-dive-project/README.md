@@ -38,3 +38,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Highlights
 
 - When using parallel routes we are working with a layout that tries to render the content of two different routes on the same page, so if one of the pages support a nested route called [year] the other page must support it too, but for simplicity we can use a `default.tsx` page and it will define the default fallback content thtat should be displayed
+- Using Catch-all feature we can have a page thtat will be active for different paths, for this we need use `[[...filter]]` notation
