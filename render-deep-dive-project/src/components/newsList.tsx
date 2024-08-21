@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-type New = {
+export type New = {
   id: string;
   slug: string;
   title: string;
