@@ -9,7 +9,9 @@ interface NewsDetailProps {
 const NewsDetailPage = ({ params }: NewsDetailProps) => {
   const { slug } = params;
   const newsItem = DUMMY_NEWS.find((newsItem) => newsItem.slug === slug);
+
   if (!newsItem) notFound();
+
   return (
     <article className="news-article">
       <header>
